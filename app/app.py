@@ -1,15 +1,19 @@
 from flask import Flask
+import requests
 
 app = Flask(__name__)
 
-@app.route('/')
+
+@app.route("/")
 def hello_app():
-	return  'Application is running, good work Doug!'
+    return "Application is running, good work Doug!"
 
 
-@app.route('/data')
+@app.route("/data")
 def show_data():
-	return "JSON"
+    r = requests.get("http://google.com")
+    return f"Status Code: {r.status_code}"
 
-if __name__ == '__main__':
-	app.run(debug=True)
+
+if __name__ == "__main__":
+    app.run(debug=True)

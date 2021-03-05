@@ -67,6 +67,7 @@ instance/
 
 # React stuff
 .package.json 
+.flaskenv
 
 # Scrapy stuff:
 .scrapy
